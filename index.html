@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Código QR</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="flex justify-center items-center h-screen">
+        <div class="w-full max-w-md bg-white p-8 rounded shadow-md">
+            <h1 class="text-3xl font-bold mb-6 text-center">Generador de Código QR</h1>
+            <div class="mb-6">
+                <input type="text" id="urlInput"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                    placeholder="Ingrese la URL" />
+            </div>
+            <button id="generarCodigoQR"
+                class="w-full bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                onclick="generarCodigoQR()">
+                Generar Código QR
+            </button>
+            <div id="codigoQRContainer" class="mx-auto mt-5 mb-5 flex items-center justify-center"></div>
+            <button id="descargarQR"
+                style="display: none;"
+                class="mt-6 mx-auto block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+                onclick="descargarCodigoQR()">
+                Descargar Código QR
+            </button>
+        </div>
+    </div>
+
+    <div id="codigoQR"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
