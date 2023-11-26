@@ -6,34 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Generador de Código QR</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <div class="flex justify-center items-center h-screen">
-        <div class="w-full max-w-md bg-white p-8 rounded shadow-md">
-            <h1 class="text-3xl font-bold mb-6 text-center">Generador de Código QR</h1>
-            <div class="mb-6">
-                <input type="text" id="urlInput"
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
-                    placeholder="Ingrese la URL" />
-            </div>
-            <button id="generarCodigoQR"
-                class="w-full bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-                onclick="generarCodigoQR()">
-                Generar Código QR
-            </button>
-            <div id="codigoQRContainer" class="mx-auto mt-5 mb-5 flex items-center justify-center"></div>
-            <button id="descargarQR"
-                style="display: none;"
-                class="mt-6 mx-auto block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-                onclick="descargarCodigoQR()">
-                Descargar Código QR
-            </button>
+    <header>
+        <div class="bg-black text-white h-22">
+            <nav class="flex justify-between items-center mx-20 h-20">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://migdev.netlify.app/"> Migedev</a>
+                    </li>
+                </ul>
+                <ul class="font-bold flex justify-center items-center">
+                    <li class="text-xl">
+                        <a target="_blank" href="https://www.facebook.com/miguelangel.castillocolmenares.54">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="ml-3" target="_blank" href="https://www.linkedin.com/in/miguel-angel-castillo-colmenares/">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
+    
+    <section>
+        <div class="flex justify-center items-center mt-20">
+            <div class="w-full max-w-md bg-white p-8 rounded shadow-md">
+                <h1 class="text-3xl font-bold mb-6 text-center">
+                    Generador de Código QR
+                </h1>
+                <div class="mb-6">
+                    <input type="text" id="urlInput"
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                        placeholder="Ingrese la URL" />
+                </div>
+                <button id="generarCodigoQR"
+                    class="w-full bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                    onclick="generarCodigoQR()">
+                    Generar Código QR
+                </button>
+                <div id="codigoQRContainer" class="mx-auto mt-5 mb-5 flex items-center justify-center"></div>
+                <button id="descargarQR" style="display: none"
+                    class="mt-6 mx-auto block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+                    onclick="descargarCodigoQR()">
+                    Descargar Código QR
+                </button>
+            </div>
+        </div>
 
-    <div id="codigoQR"></div>
-
+        <div id="codigoQR"></div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.min.js"></script>
     <script src="js/app.js"></script>
 </body>
